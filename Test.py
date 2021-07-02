@@ -67,16 +67,13 @@ expenses = (
     ["Pan",Z[0], D[0] , K1,"-"]
 )
 
-# Start from the first cell. Rows and columns are zero indexed.
-row = 0
 col = 0
 
 # Iterate over the data and write it out row by row.
-for A,B,C,D,E in (expenses):
+for row, (A, B, C, D, E) in enumerate((expenses)):
     worksheet.write(row, col, A)
     worksheet.write(row, col + 1, B)
     worksheet.write(row, col + 2, C)
     worksheet.write(row, col + 3, D)
     worksheet.write(row, col + 4, E)
-    row += 1
 workbook.close()
